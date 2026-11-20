@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "core-score"
+dynamic = ["version"]
+description = "CORE Score: agreement within an ensemble of predicted protein-ligand poses"
+readme = "README.md"
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
+authors = [{name = "J. Henry Broster"}]
+keywords = ["co-folding", "protein-ligand", "structure prediction", "confidence", "AlphaFold3",
+            "Machine Learning", "Drug Discovery", "Reliability"]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Programming Language :: Python :: 3",
+]
+requires-python = ">=3.11"
+dependencies = ["numpy>=2", "scipy>=1.13", "gemmi>=0.7.5,<0.8", "rdkit>=2025.3", "posebusters>=0.6.5,<0.7"]
+
+[project.urls]
+Repository = "https://github.com/oxpig/core-score"
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.8"]
+test = ["pytest>=8"]
+
+[project.scripts]
+core-score = "core_score.cli:main"
+core-score-csv = "core_score.inputs.make_csv:main"
+
+[tool.setuptools.dynamic]
+version = {attr = "core_score.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--ignore=tests/integration"
+

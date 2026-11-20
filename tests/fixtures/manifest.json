@@ -1,0 +1,15 @@
+{
+  "smiles": "CCN1C(=O)c2cc(N3CCN(C)CC3)nc3c(NS(=O)(=O)c4ccc(F)cc4F)ccc1c23",
+  "structures": {
+    "7wl4_pose1.cif": "62153869ac176fd0c30ec3ea6d6eba6c027d707ad391963f04a030bf516c5b53",
+    "7wl4_pose0.cif": "458d0e364aa86b1e4d822043cb4b405f9142913a2f71fd1ed95448adec2b2386"
+  },
+  "ost_version": "2.12.0",
+  "expected_single_copy": {
+    "rmsd": 0.2812016010284424,
+    "bb_rmsd": 0.07564989477396011,
+    "lddt_lp": 1.0,
+    "n_assigned": 1,
+    "error": ""
+  }
+}
